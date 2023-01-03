@@ -1,19 +1,28 @@
 @use 'base/variables' as v;
 @use 'base/mixins' as m;
 
-.crear {
+.login {
     margin-top: 5rem;
 
     .uptask {
-        background: linear-gradient(to right, v.$cyan 0%, lighten(v.$azul, 25%) 70%);
+        background: linear-gradient(to right, v.$cyan 0%, lighten(v.$cyan, 25%) 70%);
         color: transparent;
         background-clip: text;
         text-align: center;
         font-size: 7rem;
 
-
         @include m.tablet {
             font-size: 10rem;
+        }
+    }
+
+    input[type="submit"] {
+        @include m.boton(v.$cyan, v.$blanco);
+    }
+
+    .acciones {
+        a {
+            color: v.$blue;
         }
     }
 }

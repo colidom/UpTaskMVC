@@ -50,15 +50,21 @@ class LoginController
         if ($_SERVER["REQUEST_METHOD"] === 'POST') {
         }
 
-        $titulo = "Restablecer contraseña";
         $router->render('auth/restablecer', [
             'titulo' => $titulo
         ]);
     }
 
-    public static function mensaje()
+    public static function mensaje(Router $router)
     {
-        echo "Desde mensaje";
+        $titulo = "Cuenta creada exitosamente";
+
+        if ($_SERVER["REQUEST_METHOD"] === 'POST') {
+        }
+
+        $router->render('auth/mensaje', [
+            'titulo' => $titulo
+        ]);
     }
 
     public static function confirmar()

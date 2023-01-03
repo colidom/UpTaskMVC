@@ -19,7 +19,7 @@ class LoginController
 
     public static function logout()
     {
-        echo "Desde login";
+        echo "Desde logout";
     }
 
     public static function crear(Router $router)

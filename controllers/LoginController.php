@@ -67,8 +67,15 @@ class LoginController
         ]);
     }
 
-    public static function confirmar()
+    public static function confirmar(Router $router)
     {
-        echo "Desde confirmar";
+        $titulo = "Cuenta confirmada exitosamente";
+
+        if ($_SERVER["REQUEST_METHOD"] === 'POST') {
+        }
+
+        $router->render('auth/confirmar', [
+            'titulo' => $titulo
+        ]);
     }
 }

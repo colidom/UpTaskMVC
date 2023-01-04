@@ -32,9 +32,7 @@ class LoginController
         if ($_SERVER["REQUEST_METHOD"] === 'POST') {
             $usuario->sincronizar($_POST);
 
-            /* debuguear($usuario); */
             $alertas = $usuario->validarNuevaCuenta();
-            debuguear($alertas);
         }
 
         $router->render('auth/crear', [

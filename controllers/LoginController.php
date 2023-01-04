@@ -33,7 +33,6 @@ class LoginController
             $usuario->sincronizar($_POST);
 
             $alertas = $usuario->validarNuevaCuenta();
-            debuguear($alertas);
         }
 
         $router->render('auth/crear', [

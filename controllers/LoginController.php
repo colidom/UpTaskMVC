@@ -42,7 +42,18 @@ class LoginController
                     Usuario::setAlerta('error', 'Error: Ya existe un usuario con el email ' . $usuario->email);
                     $alertas = Usuario::getAlertas();
                 } else {
+                    // Hashear el password
+                    $usuario->hashPassword();
+                    // Eliminar password2
+                    unset($usuario->password2);
+                    // Crear token
+                    $usuario->crearToken();
                     // Creamos un nuevo usuario
+                    $resultado = $usuario->guardar();
+
+                    if ($resultado) {
+                        header('Location: /mensaje');
+                    }
                 }
             }
         }

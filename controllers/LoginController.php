@@ -27,7 +27,7 @@ class LoginController
     {
         $titulo = "Crear cuenta";
         $usuario = new Usuario();
-
+        $alertas = [];
 
         if ($_SERVER["REQUEST_METHOD"] === 'POST') {
             $usuario->sincronizar($_POST);

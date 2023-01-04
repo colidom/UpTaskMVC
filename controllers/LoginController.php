@@ -10,6 +10,7 @@ class LoginController
     public static function login(Router $router)
     {
         $titulo = "Iniciar sesión";
+
         if ($_SERVER["REQUEST_METHOD"] === 'POST') {
         }
 
@@ -26,8 +27,8 @@ class LoginController
     public static function crear(Router $router)
     {
         $titulo = "Crear cuenta";
-        $usuario = new Usuario();
         $alertas = [];
+        $usuario = new Usuario();
 
         if ($_SERVER["REQUEST_METHOD"] === 'POST') {
             $usuario->sincronizar($_POST);

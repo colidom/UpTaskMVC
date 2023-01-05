@@ -111,12 +111,32 @@ class LoginController
     public static function confirmar(Router $router)
     {
         $titulo = "Cuenta confirmada exitosamente";
+        $token = s($_GET['token']);
 
-        if ($_SERVER["REQUEST_METHOD"] === 'POST') {
+        if (!$token) header("Location: /");
+
+        // Encontrar al usuario con este token
+        $usuario = Usuario::where('token', $token);
+
+        if (empty($usuario)) {
+            // No se encuentra un usuario con ese token
+            Usuario::setAlerta('error', 'Token no válido');
+        } else {
+            // Confirmar la cuenta
+            $usuario->confirmado = 1;
+            $usuario->token = null;
+            unset($usuario->password2);
+
+            // Guardar en la base de datos
+            $usuario->guardar();
+            Usuario::setAlerta('exito', 'Cuenta confirmada correctamente');
         }
 
+        $alertas = Usuario::getAlertas();
+
         $router->render('auth/confirmar', [
-            'titulo' => $titulo
+            'titulo' => $titulo,
+            'alertas' => $alertas
         ]);
     }
 }

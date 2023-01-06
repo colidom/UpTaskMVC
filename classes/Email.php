@@ -25,8 +25,8 @@ class Email
         $mail->Host = 'smtp.mailtrap.io';
         $mail->SMTPAuth = true;
         $mail->Port = 2525;
-        $mail->Username = '06ed95c3a9b8b4';
-        $mail->Password = 'faeb551dc75a24';
+        $mail->Username = '3c91ff27a7d08d';
+        $mail->Password = '39bde0df22cdf6';
 
         $mail->setFrom("cuentas@uptask.com");
         $mail->addAddress("cuentas@uptask.com", "uptask.com");

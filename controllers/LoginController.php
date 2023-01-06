@@ -78,7 +78,6 @@ class LoginController
         if ($_SERVER["REQUEST_METHOD"] === 'POST') {
         }
 
-        $titulo = "Olvide cuenta";
         $router->render('auth/olvide', [
             'titulo' => $titulo
         ]);

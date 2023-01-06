@@ -3,6 +3,8 @@
     <div class="contenedor-sm">
         <p class="descripcion-pagina">Restablecer contraseña</p>
 
+        <?php include_once __DIR__ . '/../templates/alertas.php'; ?>
+
         <form method="POST" action="/olvide" class="formulario">
             <div class="campo">
                 <label for="email">Email</label>

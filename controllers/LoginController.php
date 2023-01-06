@@ -95,11 +95,10 @@ class LoginController
                     Usuario::setAlerta('exito', 'Hemos enviado las instrucciones a tu email');
                 } else {
                     Usuario::setAlerta('error', 'El usuario no existe o aún no ha sido confirmado');
-                    $alertas = Usuario::getAlertas();
                 }
             }
         }
-
+        $alertas = Usuario::getAlertas();
         $router->render('auth/olvide', [
             'titulo' => $titulo,
             'alertas' => $alertas

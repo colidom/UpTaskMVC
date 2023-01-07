@@ -137,12 +137,13 @@ class LoginController
                 // Hashear nuevo password
                 $usuario->hashPassword();
                 // Eliminar el token
-    
+
                 // Guardar el usuario
-    
+
                 // Redireccionar
-    
+
                 debuguear($usuario);
+            }
         }
 
         $alertas = Usuario::getAlertas();

@@ -14,10 +14,10 @@
 
                 <input type="submit" class="boton" value="Guardar password">
             </form>
-            <div class="acciones">
-                <a href="/crear">¿Aún no tienes una cuenta? Crear</a>
-                <a href="/olvide">¿Olvidaste tu password? Recuperar</a>
-            </div>
         <?php } ?>
+        <div class="acciones">
+            <a href="/crear">¿Aún no tienes una cuenta? Crear</a>
+            <a href="/olvide">¿Olvidaste tu password? Recuperar</a>
+        </div>
     </div><!-- .contenedor-sm -->
 </div>

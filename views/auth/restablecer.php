@@ -6,7 +6,7 @@
         <?php include_once __DIR__ . '/../templates/alertas.php'; ?>
 
         <?php if ($mostrar) { ?>
-            <form method="POST" action="/restablecer" class="formulario">
+            <form method="POST" class="formulario">
                 <div class="campo">
                     <label for="password">Password</label>
                     <input type="password" id="password" placeholder="Tu password" name="password">

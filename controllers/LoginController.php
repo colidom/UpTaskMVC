@@ -132,6 +132,17 @@ class LoginController
 
             // Validar el nuevo password
             $alertas = $usuario->validarPassword();
+
+            if (empty($alertas)) {
+                // Hashear nuevo password
+                $usuario->hashPassword();
+                // Eliminar el token
+    
+                // Guardar el usuario
+    
+                // Redireccionar
+    
+                debuguear($usuario);
         }
 
         $alertas = Usuario::getAlertas();

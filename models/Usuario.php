@@ -72,12 +72,6 @@ class Usuario extends ActiveRecord
             self::$alertas['error'][] = "El password debe tener al menos 6 caracteres";
         }
 
-        if (empty($alertas)) {
-            // Hashear nuevo password
-
-            debuguear($usuario);
-        }
-
         return self::$alertas;
     }
 

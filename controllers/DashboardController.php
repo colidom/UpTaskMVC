@@ -9,7 +9,10 @@ class DashboardController
     public static function index(Router $router)
     {
         isAuth();
+        $titulo = "Proyectos";
 
-        $router->render('dashboard/index', []);
+        $router->render('dashboard/index', [
+            'titulo' => $titulo
+        ]);
     }
 }

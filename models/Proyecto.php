@@ -21,4 +21,13 @@ class Proyecto extends ActiveRecord
         $this->url = $args['url'] ?? '';
         $this->propietarioId = $args['propietarioId'] ?? '';
     }
+
+    public function validarProyecto()
+    {
+        if (!$this->proyecto) {
+            self::$alertas['error'][] = ' El nombre del proyecto es obligatorio';
+        }
+
+        return self::$alertas;
+    }
 }

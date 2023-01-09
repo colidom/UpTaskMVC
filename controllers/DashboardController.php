@@ -19,8 +19,10 @@ class DashboardController
     public static function crear_proyecto(Router $router)
     {
         $titulo = 'Crear proyecto';
+        $alertas = [];
         $router->render('dashboard/crear-proyecto', [
-            'titulo' => $titulo
+            'titulo' => $titulo,
+            'alertas' => $alertas
         ]);
     }
 

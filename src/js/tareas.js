@@ -52,6 +52,8 @@
             mostrarAlerta('Debe indicar un nombre a la tarea', 'error', document.querySelector('.formulario legend'));
             return;
         }
+
+        agregarTarea(tarea);
     }
 
     // Mustra un mensaje en la interfaz
@@ -73,4 +75,7 @@
             alerta.remove();
         }, 5000);
     }
+
+    // Consultar el servidor para añadir una nueva tarea al proyecto actual
+    function agregarTarea(tarea) {}
 })();

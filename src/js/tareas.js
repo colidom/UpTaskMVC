@@ -49,11 +49,7 @@
 
         if (tarea === "") {
             // Mostrar una alerta de error
-            mostrarAlerta(
-                "Debe indicar un nombre a la tarea",
-                "error",
-                document.querySelector(".formulario legend")
-            );
+            mostrarAlerta("Debe indicar un nombre a la tarea", "error", document.querySelector(".formulario legend"));
             return;
         }
     }
@@ -70,10 +66,7 @@
         alerta.textContent = mensaje;
 
         // Inserta la alerta antes del legend
-        referencia.parentElement.insertBefore(
-            alerta,
-            referencia.nextElementSibling
-        );
+        referencia.parentElement.insertBefore(alerta, referencia.nextElementSibling);
 
         // Eliminar la alerta tras 5 segundos
         setTimeout(() => {

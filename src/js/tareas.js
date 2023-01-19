@@ -94,6 +94,13 @@
 
             // Mostramos alerta en ventana modal de añadir tarea
             mostrarAlerta(resultado.mensaje, resultado.tipo, document.querySelector('.formulario legend'));
+
+            if (resultado.tipo === 'exito') {
+                const modal = document.querySelector('.modal');
+                setTimeout(() => {
+                    modal.remove();
+                }, 2000);
+            }
         } catch (error) {
             console.log(error);
         }

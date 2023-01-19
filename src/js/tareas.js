@@ -11,7 +11,7 @@
         <form class="formulario nueva-tarea">
             <legend>Añade una nueva tarea</legend>
             <div class="campo">
-                <label>Tarea</label>
+                <label>Nombre</label>
                 <input type="text" name="tarea" placeholder="Añadir tarea al proyecto actual"
                 id="tarea"/>
             </div>
@@ -92,7 +92,8 @@
 
             const resultado = await respuesta.json();
 
-            console.log(resultado);
+            // Mostramos alerta en ventana modal de añadir tarea
+            mostrarAlerta(resultado.mensaje, resultado.tipo, document.querySelector('.formulario legend'));
         } catch (error) {
             console.log(error);
         }

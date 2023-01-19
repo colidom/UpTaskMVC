@@ -9,8 +9,6 @@ class TareaController
 {
     public static function index()
     {
-        if ($_SERVER["REQUEST_METHOD"] === 'POST') {
-        }
     }
 
     public static function crear()

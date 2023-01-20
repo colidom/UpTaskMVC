@@ -1,6 +1,7 @@
 // IIFE -> Inmediatelly Invoque Function Expression
 (function () {
     obtenerTareas();
+    let tareas = [];
 
     // Botón para mostrar ventana modal para agregar tarea
     const nuevaTareaBtn = document.querySelector('#agregar-tarea');
@@ -13,14 +14,15 @@
             const respuesta = await fetch(url);
             const resultado = await respuesta.json();
 
-            const { tareas } = resultado;
-            mostrarTareas(tareas);
+            tareas = resultado.tareas;
+            mostrarTareas();
         } catch (error) {
             console.log(error);
         }
     }
 
-    function mostrarTareas(tareas) {
+    function mostrarTareas() {
+        limpiarTareas();
         if (tareas.length === 0) {
             const contenedorTareas = document.querySelector('#listado-tareas');
             const textoNoTareas = document.createElement('LI');
@@ -165,8 +167,20 @@
                 const modal = document.querySelector('.modal');
                 setTimeout(() => {
                     modal.remove();
-                    window.location.reload();
                 }, 2000);
+
+                // Agregar el objeto de tareas al global de tareas
+                const tareasObj = {
+                    id: String(resultado.id),
+                    nombre: tarea,
+                    estado: '0',
+                    proyectoId: resultado.proyectoId,
+                };
+
+                tareas = [...tareas, tareasObj];
+                mostrarTareas();
+
+                console.log(tareasObj);
             }
         } catch (error) {
             console.log(error);
@@ -177,5 +191,13 @@
         const proyectoParams = new URLSearchParams(window.location.search);
         const proyecto = Object.fromEntries(proyectoParams.entries());
         return proyecto.id;
+    }
+
+    function limpiarTareas() {
+        const listadoTareas = document.querySelector('#listado-tareas');
+
+        while (listadoTareas.firstChild) {
+            listadoTareas.removeChild(listadoTareas.firstChild);
+        }
     }
 })();

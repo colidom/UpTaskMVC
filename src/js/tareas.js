@@ -165,6 +165,7 @@
                 const modal = document.querySelector('.modal');
                 setTimeout(() => {
                     modal.remove();
+                    window.location.reload();
                 }, 2000);
             }
         } catch (error) {

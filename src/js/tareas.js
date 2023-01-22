@@ -177,6 +177,7 @@
                     proyectoId: resultado.proyectoId,
                 };
 
+                // Añadir tareas a la vista y mostrarlas sin recargar la vista
                 tareas = [...tareas, tareasObj];
                 mostrarTareas();
 

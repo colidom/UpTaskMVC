@@ -224,6 +224,18 @@
                     resultado.respuesta.tipo,
                     document.querySelector('.contenedor-nueva-tarea')
                 );
+
+                // return tareaMemoria devuelve las tareas actualizadas
+                tareas = tareas.map((tareaMemoria) => {
+                    if (tareaMemoria.id === id) {
+                        tareaMemoria.estado = estado;
+                        tareaMemoria.nombre = nombre;
+                    }
+
+                    return tareaMemoria;
+                });
+
+                mostrarTareas();
             }
         } catch (error) {
             console.log(error);

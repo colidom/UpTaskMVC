@@ -79,7 +79,7 @@ class TareaController
                     'proyectoId' => $proyecto->id,
                     'mensaje' => "Tarea actualizada correctamente"
                 ];
-                echo json_encode(['resupuesta' => $respuesta]);
+                echo json_encode(['respuesta' => $respuesta]);
             }
         }
     }

@@ -83,7 +83,7 @@
         });
     }
 
-    function mostrarFormulario(editar = false, tarea) {
+    function mostrarFormulario(editar = false, tarea = {}) {
         console.log(editar);
         const modal = document.createElement('DIV');
         modal.classList.add('modal');
@@ -92,10 +92,10 @@
             <legend>${editar ? 'Editar tarea' : 'Añade una nueva tarea'}</legend>
             <div class="campo">
                 <label>Nombre</label>
-                <input type="text" name="tarea" placeholder="${
-                    editar ? tarea.nombre : 'Añadir tarea al proyecto actual'
-                }"
-                id="tarea"/>
+                <input type="text" name="tarea" placeholder="Añadir tarea al proyecto actual"
+                id="tarea"
+                value=${tarea.nombre}
+            />
             </div>
             <div class="opciones">
                 <input type="submit" class="submit-nueva-tarea" name="tarea" value="${

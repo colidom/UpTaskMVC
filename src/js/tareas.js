@@ -94,8 +94,8 @@
                 <label>Nombre</label>
                 <input type="text" name="tarea" placeholder="Añadir tarea al proyecto actual"
                 id="tarea"
-                value=${tarea.nombre}
-            />
+                value="${tarea.nombre ? tarea.nombre : ''}"
+            >
             </div>
             <div class="opciones">
                 <input type="submit" class="submit-nueva-tarea" name="tarea" value="${

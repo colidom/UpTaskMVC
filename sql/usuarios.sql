@@ -12,7 +12,7 @@ CREATE TABLE `usuarios` (
   `nombre` varchar(30) DEFAULT NULL,
   `email` varchar(30) DEFAULT NULL,
   `password` varchar(60) DEFAULT NULL,
-  `token` varchar(15) DEFAULT NULL,
+  `token` varchar(32) DEFAULT NULL,
   `confirmado` tinyint(1) DEFAULT NULL,
   UNIQUE KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;

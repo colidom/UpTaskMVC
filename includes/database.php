@@ -1,6 +1,6 @@
 <?php
 
-$db = mysqli_connect('localhost', 'colidom', 'Mysql2021', 'uptask_mvc');
+$db = mysqli_connect('localhost', 'colidom', 'Mysql2023', 'uptask_mvc');
 $db->set_charset("utf8");
 
 if (!$db) {

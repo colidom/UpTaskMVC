@@ -20,7 +20,7 @@ class Router
     public function comprobarRutas()
     {
 
-        // Empezamos sesión
+        // Empezamos sesión una única vez
         session_start();
 
         $currentUrl = $_SERVER['PATH_INFO'] ?? '/';

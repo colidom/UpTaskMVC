@@ -48,7 +48,7 @@
             const nombreTarea = document.createElement('P');
             nombreTarea.textContent = tarea.nombre;
             nombreTarea.onclick = function () {
-                mostrarFormulario(true, tarea);
+                mostrarFormulario(true, { ...tarea });
             };
 
             const opcionesDiv = document.createElement('DIV');
@@ -126,23 +126,28 @@
                 }, 300);
             }
             if (e.target.classList.contains('submit-nueva-tarea')) {
-                submitFormularioNuevaTarea();
+                const nombreTarea = document.querySelector('#tarea').value.trim();
+
+                if (nombreTarea === '') {
+                    // Mostrar una alerta de error
+                    mostrarAlerta(
+                        'Debe indicar un nombre a la tarea',
+                        'error',
+                        document.querySelector('.formulario legend')
+                    );
+                    return;
+                }
+
+                if (editar) {
+                    tarea.nombre = nombreTarea;
+                    actualizarTarea(tarea);
+                } else {
+                    agregarTarea(nombreTarea);
+                }
             }
         });
 
         document.querySelector('.dashboard').appendChild(modal);
-    }
-
-    function submitFormularioNuevaTarea() {
-        const tarea = document.querySelector('#tarea').value.trim();
-
-        if (tarea === '') {
-            // Mostrar una alerta de error
-            mostrarAlerta('Debe indicar un nombre a la tarea', 'error', document.querySelector('.formulario legend'));
-            return;
-        }
-
-        agregarTarea(tarea);
     }
 
     // Mustra un mensaje en la interfaz

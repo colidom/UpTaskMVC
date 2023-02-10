@@ -242,11 +242,12 @@
             const resultado = await respuesta.json();
 
             if (resultado.respuesta.tipo === 'exito') {
-                mostrarAlerta(
-                    resultado.respuesta.mensaje,
-                    resultado.respuesta.tipo,
-                    document.querySelector('.contenedor-nueva-tarea')
-                );
+                Swal.fire(resultado.respuesta.mensaje, resultado.respuesta.mensaje, 'success');
+
+                const modal = document.querySelector('.modal');
+                if (modal) {
+                    modal.remove();
+                }
 
                 // return tareaMemoria devuelve las tareas actualizadas
                 tareas = tareas.map((tareaMemoria) => {

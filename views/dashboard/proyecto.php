@@ -17,11 +17,12 @@
                 <label for="todas">Completadas</label>
                 <input type="radio" id="completadas" name="filtro" value="1" />
             </div>
+            <div class="campo">
+                <label for="pendientes">Pendientes</label>
+                <input type="radio" id="pendientes" name="filtro" value="0" />
+            </div>
         </div>
-        <div class="campo">
-            <label for="pendientes">Pendientes</label>
-            <input type="radio" id="pendientes" name="filtro" value="0" />
-        </div>
+
     </div>
 </div>
 <ul id="listado-tareas" class="listado-tareas"></ul>

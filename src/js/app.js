@@ -17,3 +17,13 @@ if (cerrarMenuBtn) {
         }, 100);
     });
 }
+
+// Elimina la clase de mostrar en un tamaño de lablet y mayores
+const anchoPantalla = document.body.clientWidth;
+
+window.addEventListener('resize', function () {
+    const anchoPantalla = document.body.clientWidth;
+    if (anchoPantalla >= 768) {
+        sidebar.classList.remove('mostrar');
+    }
+});

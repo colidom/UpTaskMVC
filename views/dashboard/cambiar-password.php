@@ -5,7 +5,7 @@
 
     <a href="/perfil" class="enlace-perfil">Volver al perfil</a>
 
-    <form method="POST" class="formulario" action="/perfil">
+    <form method="POST" class="formulario" action="/cambiar-password">
 
         <div class="campo">
             <label for="password">Contraseña actual</label>
@@ -13,7 +13,7 @@
         </div>
         <div class="campo">
             <label for="password">Contraseña nueva</label>
-            <input type="password" name="password_actual" placeholder="Contraseña nueva">
+            <input type="password" name="password_nuevo" placeholder="Contraseña nueva">
         </div>
 
         <input type="submit" value="Guardar cambios">

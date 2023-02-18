@@ -99,6 +99,12 @@ class Usuario extends ActiveRecord
         if (!$this->email) {
             self::$alertas['error'][] = "El email es obligatorio";
         }
+        if (strlen($this->nombre) > 30) {
+            self::$alertas['error'][] = "El campo nombre no puede ser superior a 30 caracteres";
+        }
+        if (strlen($this->email) > 30) {
+            self::$alertas['error'][] = "El campo email no puede ser superior a 30 caracteres";
+        }
 
         return self::$alertas;
     }

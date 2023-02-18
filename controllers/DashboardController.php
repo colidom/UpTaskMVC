@@ -125,8 +125,10 @@ class DashboardController
 
             // Sincronizar con los datos del usuario
             $usuario->sincronizar($_POST);
+            $alertas = $usuario->nuevo_password();
 
-            debuguear($usuario);
+            if (empty($alertas)) {
+            }
         }
         $titulo = 'Cambiar contraseña';
         $router->render('dashboard/cambiar-password', [

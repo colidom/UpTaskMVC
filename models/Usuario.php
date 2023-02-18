@@ -113,7 +113,7 @@ class Usuario extends ActiveRecord
         return self::$alertas;
     }
 
-    public function nuevo_password()
+    public function nuevo_password(): array
     {
         if (!$this->password_actual) {
             self::$alertas['error'][] = "Debe indicar su contraseña actual";
@@ -127,14 +127,20 @@ class Usuario extends ActiveRecord
         return self::$alertas;
     }
 
+    public function comprobar_password(): bool
+    {
+
+        return password_verify($this->password_actual, $this->password);
+    }
+
     // Hashear el password
-    public function hashPassword()
+    public function hashPassword(): void
     {
         $this->password = password_hash($this->password, PASSWORD_BCRYPT);
     }
 
     // Crear token
-    public function crearToken()
+    public function crearToken(): void
     {
         $this->token = md5(uniqid());
     }

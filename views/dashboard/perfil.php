@@ -1,7 +1,7 @@
 <?php include_once __DIR__ . '/header-dashboard.php'; ?>
 
 <div class="contenedor-sm">
-    <?php include_once __DIR__ . '../templates/alertas.php'; ?>
+    <?php include_once __DIR__ . '/../templates/alertas.php'; ?>
 
     <form method="POST" class="formulario">
         <div class="campo">

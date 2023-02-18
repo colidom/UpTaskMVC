@@ -131,7 +131,22 @@ class DashboardController
                 $resultado = $usuario->comprobar_password();
 
                 if ($resultado) {
-                    // Asignar el nuevo password
+                    $usuario->password = $usuario->password_nuevo;
+
+                    // Eliminamos la contraseña actual y nueva del objeto usuario
+                    unset($usuario->password_actual);
+                    unset($usuario->password_nuevo);
+
+                    // Hashear el nuevo password
+                    $usuario->hashPassword();
+
+                    // Actualizar 
+                    $resultado = $usuario->guardar();
+
+                    if ($resultado) {
+                        Usuario::setAlerta('exito', 'Contraseña actualizada correctamente');
+                        $alertas = Usuario::getAlertas();
+                    }
                 } else {
                     Usuario::setAlerta('error', 'La contraseña actual introducida es incorrecta');
                 }

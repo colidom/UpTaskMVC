@@ -24,15 +24,51 @@
 
     .formulario .campo input {
         background-color: lighten($color: v.$grisOscuro, $amount: 1%);
+
+        &::placeholder {
+            color: darken(v.$grisClaro, 30%);
+        }
     }
 
     .alerta.error {
         background-color: v.$blanco;
     }
 
-    .barra-mobile {
+    .sidebar {
+        @include m.tablet {
+            background-color: darken($color: v.$grisOscuro, $amount: 5%);
+        }
+
+        .sidebar-nav a {
+
+            &.activo,
+            &:hover {
+                background-color: v.$naranja;
+            }
+        }
+    }
+
+
+    .barra-mobile,
+    .barra {
         background-color: darken($color: v.$grisOscuro, $amount: 7%);
     }
+
+    .barra {
+        p {
+            color: v.$naranja;
+
+            span {
+                color: v.$grisClaro;
+            }
+        }
+
+        .cerrar-sesion {
+            @include m.boton(v.$naranja, v.$blanco);
+            padding: 1.2rem;
+        }
+    }
+
 
     .filtros {
         background-color: lighten($color: v.$grisOscuro, $amount: 10%);
@@ -43,7 +79,7 @@
         }
 
         input[type="radio"] {
-            accent-color: $grisOscuro;
+            accent-color: v.$naranja;
         }
     }
 
@@ -55,6 +91,15 @@
 
             &:hover {
                 color: darken($color: v.$grisClaro, $amount: 20%);
+            }
+        }
+
+        .formulario input:not([type="submit"]) {
+            background-color: lighten($color: v.$grisOscuro, $amount: 20%);
+            color: v.$blanco;
+
+            &::placeholder {
+                color: darken($color: v.$grisClaro, $amount: 30%);
             }
         }
     }
@@ -74,6 +119,24 @@
         p {
             color: v.$grisClaro;
 
+        }
+    }
+
+    .modal .formulario {
+        background-color: v.$grisOscuro;
+
+        input[type="text"] {
+            background-color: lighten($color: v.$grisOscuro, $amount: 20%);
+            border: none;
+            color: v.$blanco;
+
+            &::placeholder {
+                color: darken($color: v.$grisClaro, $amount: 20%);
+            }
+        }
+
+        legend {
+            color: v.$grisClaro;
         }
     }
 

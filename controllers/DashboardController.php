@@ -152,7 +152,7 @@ class DashboardController
                 }
             }
         }
-        $alertas = $usuario->getAlertas();
+        $alertas = Usuario::getAlertas();
         $titulo = 'Cambiar contraseña';
         $router->render('dashboard/cambiar-password', [
             'titulo' => $titulo,

@@ -19,11 +19,11 @@
     .descripcion-pagina,
     .formulario .campo input,
     .nombre-pagina {
-        color: darken($color: v.$grisClaro, $amount: 15%);
+        color: darken(v.$grisClaro, 15%);
     }
 
     .formulario .campo input {
-        background-color: lighten($color: v.$grisOscuro, $amount: 1%);
+        background-color: lighten(v.$grisOscuro, 1%);
 
         &::placeholder {
             color: darken(v.$grisClaro, 30%);
@@ -36,7 +36,7 @@
 
     .sidebar {
         @include m.tablet {
-            background-color: darken($color: v.$grisOscuro, $amount: 5%);
+            background-color: darken(v.$grisOscuro, 5%);
         }
 
         .sidebar-nav a {
@@ -51,7 +51,7 @@
 
     .barra-mobile,
     .barra {
-        background-color: darken($color: v.$grisOscuro, $amount: 7%);
+        background-color: darken(v.$grisOscuro, 7%);
     }
 
     .barra {
@@ -71,7 +71,7 @@
 
 
     .filtros {
-        background-color: lighten($color: v.$grisOscuro, $amount: 10%);
+        background-color: lighten(v.$grisOscuro, 10%);
 
         h2,
         labels {
@@ -90,30 +90,30 @@
             color: v.$grisClaro;
 
             &:hover {
-                color: darken($color: v.$grisClaro, $amount: 20%);
+                color: darken(v.$grisClaro, 20%);
             }
         }
 
         .formulario input:not([type="submit"]) {
-            background-color: lighten($color: v.$grisOscuro, $amount: 20%);
+            background-color: lighten(v.$grisOscuro, 20%);
             color: v.$blanco;
 
             &::placeholder {
-                color: darken($color: v.$grisClaro, $amount: 30%);
+                color: darken(v.$grisClaro, 30%);
             }
         }
     }
 
     .listado-proyectos .proyecto {
-        background-color: lighten($color: v.$grisOscuro, $amount: 20%);
+        background-color: lighten(v.$grisOscuro, 20%);
 
         &:hover {
-            background-color: lighten($color: v.$grisOscuro, $amount: 15%);
+            background-color: lighten(v.$grisOscuro, 15%);
         }
     }
 
     .listado-tareas .tarea {
-        background-color: lighten($color: v.$grisOscuro, $amount: 10%);
+        background-color: lighten(v.$grisOscuro, 10%);
         border: none;
 
         p {
@@ -126,12 +126,12 @@
         background-color: v.$grisOscuro;
 
         input[type="text"] {
-            background-color: lighten($color: v.$grisOscuro, $amount: 20%);
+            background-color: lighten(v.$grisOscuro, 20%);
             border: none;
             color: v.$blanco;
 
             &::placeholder {
-                color: darken($color: v.$grisClaro, $amount: 20%);
+                color: darken(v.$grisClaro, 20%);
             }
         }
 

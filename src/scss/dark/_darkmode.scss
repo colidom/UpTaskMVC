@@ -2,7 +2,7 @@
 @use 'base/mixins' as m;
 
 @media (prefers-color-scheme: dark) {
-    $grisOscuro: #2c2c3b;
+    $grisOscuro: #0D1117;
 
     body {
         background-color: $grisOscuro;
@@ -36,7 +36,7 @@
 
     .sidebar {
         @include m.tablet {
-            background-color: darken(v.$grisOscuro, 5%);
+            background-color: lighten(v.$grisOscuro, 10%);
         }
 
         .sidebar-nav a {
@@ -51,7 +51,7 @@
 
     .barra-mobile,
     .barra {
-        background-color: darken(v.$grisOscuro, 7%);
+        background-color: lighten(v.$grisOscuro, 10%);
     }
 
     .barra {

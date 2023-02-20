@@ -112,13 +112,18 @@
         }
     }
 
-    .listado-tareas .tarea {
-        background-color: lighten(v.$grisOscuro, 10%);
-        border: none;
+    .listado-tareas {
+        .tarea {
+            background-color: lighten(v.$grisOscuro, 10%);
+            border: none;
 
-        p {
-            color: v.$grisClaro;
+            p {
+                color: v.$grisClaro;
+            }
+        }
 
+        .no-tareas {
+            color: darken(v.$grisClaro, 10%);
         }
     }
 

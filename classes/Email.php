@@ -22,11 +22,11 @@ class Email
         // Crear el objeto de mail
         $mail = new PHPMailer();
         $mail->isSMTP();
-        $mail->Host = 'smtp.mailtrap.io';
+        $mail->Host = $_ENV['EMAIL_HOST'];
         $mail->SMTPAuth = true;
-        $mail->Port = 2525;
-        $mail->Username = '5435c12209cf77';
-        $mail->Password = '9afb3fc77a2263';
+        $mail->Port = $_ENV['EMAIL_PORT'];
+        $mail->Username = $_ENV['EMAIL_USER'];
+        $mail->Password = $_ENV['EMAIL_PASS'];
 
         $mail->setFrom("cuentas@uptask.com");
         $mail->addAddress("cuentas@uptask.com", "uptask.com");
